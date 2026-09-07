@@ -50,6 +50,7 @@ main { padding: 0 var(--pad) 5rem; }
 .detail-info { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 1rem 0 4rem; font-size: .82rem; }
 .detail-info p { margin: 0; }
 .detail-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem; }
+.detail-gallery img { display: block; width: 100%; height: auto; }
 .about-copy { max-width: 38rem; padding-top: 10vh; font-size: clamp(1.1rem, 2.2vw, 1.5rem); letter-spacing: -.025em; }
 .about-copy p { margin: 0 0 1.5rem; }
 .site-footer { display: flex; justify-content: flex-start; color: var(--muted); padding: 2rem var(--pad); font-size: .75rem; }

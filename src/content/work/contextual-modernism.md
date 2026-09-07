@@ -3,6 +3,7 @@ title: contextual modernism
 series: contextual modernism
 image: ../../assets/images/D279C9FC-0491-45CF-948A-7E3B989A8FA9_1_102_a.jpeg
 images:
+  - ../../assets/images/D279C9FC-0491-45CF-948A-7E3B989A8FA9_1_102_a.jpg
   - ../../assets/images/255314FB-85B5-42D4-AA0E-09F0323B256E_1_102_a.jpeg
   - ../../assets/images/4DB06305-60A1-4265-9A04-E2AC8FA3CBD9_1_102_a.jpeg
   - ../../assets/images/BD4A2A76-149A-4E9A-BD92-AAA1215968D9_1_102_a.jpeg
