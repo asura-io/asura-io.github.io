@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import SiteLayout from '../layouts/SiteLayout.astro';
+const series = (await getCollection('series')).sort((a, b) => a.data.order - b.data.order);
+---
+<SiteLayout>
+  <section class="series-list home-series" aria-label="series">
+    {series.map((item, i) => <a class="series-row" href={`/series/${item.id}/`}>
+      <span class="index">{String(i + 1).padStart(2, '0')}</span>
+      <h1>{item.data.title}</h1>
+      <span class="active">{item.data.active ? 'active' : ''}</span>
+      {item.data.cover && <Image class="series-cover" src={item.data.cover} alt="" widths={[800, 1200]} sizes="50vw" />}
+    </a>)}
+  </section>
+</SiteLayout>

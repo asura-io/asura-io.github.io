@@ -1,0 +1,8 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+export async function getStaticPaths() { return (await getCollection('series')).map((entry) => ({ params: { slug: entry.id }, props: { entry } })); }
+const { entry } = Astro.props; const { Content } = await render(entry);
+const works = (await getCollection('work')).filter((work) => work.data.series.toLowerCase() === entry.data.title.toLowerCase()).sort((a,b) => a.data.order-b.data.order);
+---
+<SiteLayout title={`${entry.data.title} — gautama`}><article class="detail"><div class="section-head"><h1>{entry.data.title}</h1><a href="/series/">back</a></div><div class="about-copy"><Content /></div><section class="work-grid">{works.map((work) => <a class="work-card" href={`/work/${work.id}/`}><img class="work-image" src={work.data.image.src} alt={work.data.title} loading="lazy" /><div class="work-meta"><span>{work.data.title}</span><span>{work.data.year}</span></div></a>)}</section></article></SiteLayout>
