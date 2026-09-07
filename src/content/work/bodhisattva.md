@@ -19,6 +19,7 @@ images:
   - ../../assets/images/P4020019.JPG
   - ../../assets/images/P4020020.JPG
   - ../../assets/images/P4020021.JPG
+  - ../../assets/images/P4020022.JPG
 order: 3
 featured: true
 ---

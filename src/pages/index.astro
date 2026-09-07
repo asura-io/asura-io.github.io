@@ -5,12 +5,10 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 const series = (await getCollection('series')).sort((a, b) => a.data.order - b.data.order);
 ---
 <SiteLayout>
-  <section class="series-list home-series" aria-label="series">
-    {series.map((item, i) => <a class="series-row" href={`/series/${item.id}/`}>
-      <span class="index">{String(i + 1).padStart(2, '0')}</span>
-      <h1>{item.data.title}</h1>
-      <span class="active">{item.data.active ? 'active' : ''}</span>
-      {item.data.cover && <Image class="series-cover" src={item.data.cover} alt="" widths={[800, 1200]} sizes="50vw" />}
+  <section class="series-grid" aria-label="series">
+    {series.map((item) => <a class="series-card" href={`/series/${item.id}/`}>
+      {item.data.cover && <Image class="series-image" src={item.data.cover} alt={item.data.title} widths={[600, 1000, 1400]} sizes="(max-width: 640px) 100vw, 33vw" />}
+      <div class="series-caption"><span>{item.data.title}</span></div>
     </a>)}
   </section>
 </SiteLayout>

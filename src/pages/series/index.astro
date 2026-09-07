@@ -3,4 +3,4 @@ import { getCollection } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 const series = (await getCollection('series')).sort((a,b) => a.data.order - b.data.order);
 ---
-<SiteLayout title="series — gautama"><div class="section-head"><h1>series</h1></div><div class="series-list">{series.map((item, i) => <a class="series-row" href={`/series/${item.id}/`}><span class="index">{String(i + 1).padStart(2, '0')}</span><h2>{item.data.title}</h2><span class="active">{item.data.active ? 'active' : ''}</span></a>)}</div></SiteLayout>
+<SiteLayout title="series — gautama"><div class="section-head"><h1>series</h1></div><div class="series-list">{series.map((item, i) => <a class="series-row" href={`/series/${item.id}/`}><span class="index">{String(i + 1).padStart(2, '0')}</span><h2>{item.data.title}</h2></a>)}</div></SiteLayout>

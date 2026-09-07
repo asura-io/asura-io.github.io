@@ -1,10 +1,10 @@
 :root {
-  --paper: #f5f4ef;
+  --paper: #fafafa;
   --ink: #171715;
   --muted: #77766f;
   --line: #d9d7ce;
   --pad: clamp(1rem, 2.25vw, 2.75rem);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Times, 'Times New Roman', serif;
   color: var(--ink);
   background: var(--paper);
   font-synthesis: none;
@@ -33,6 +33,11 @@ main { padding: 0 var(--pad) 5rem; }
 .series-row { display: grid; grid-template-columns: 3rem 1fr auto; gap: 1rem; align-items: baseline; border-bottom: 1px solid var(--line); padding: 1rem 0; }
 .series-row .index, .series-row .active { color: var(--muted); font-size: .78rem; }
 .series-row h2 { font-size: clamp(1.25rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: -.04em; margin: 0; }
+.series-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 6rem) 0; margin-top: 1rem; }
+.series-card { display: block; min-width: 0; }
+.series-image { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.series-caption { display: flex; justify-content: space-between; gap: 1rem; padding-top: .65rem; font-size: .78rem; }
+.series-caption span:last-child { color: var(--muted); }
 .home-series { margin-top: 22vh; }
 .home-series .series-row { position: relative; }
 .home-series .series-row h1 { font-size: clamp(1.5rem, 4.4vw, 4rem); font-weight: 400; letter-spacing: -.055em; margin: 0; }
@@ -47,7 +52,7 @@ main { padding: 0 var(--pad) 5rem; }
 .detail-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem; }
 .about-copy { max-width: 38rem; padding-top: 10vh; font-size: clamp(1.1rem, 2.2vw, 1.5rem); letter-spacing: -.025em; }
 .about-copy p { margin: 0 0 1.5rem; }
-.site-footer { display: flex; justify-content: space-between; color: var(--muted); padding: 2rem var(--pad); font-size: .75rem; }
+.site-footer { display: flex; justify-content: flex-start; color: var(--muted); padding: 2rem var(--pad); font-size: .75rem; }
 @media (max-width: 640px) {
   .site-header { padding-bottom: 1rem; }
   nav { gap: .8rem; }
@@ -60,4 +65,5 @@ main { padding: 0 var(--pad) 5rem; }
   .series-row .active { grid-column: 2; }
   .home-series { margin-top: 12vh; }
   .home-series .series-row:hover .series-cover { display: none; }
+  .series-grid { grid-template-columns: 1fr; gap: 3rem; }
 }
