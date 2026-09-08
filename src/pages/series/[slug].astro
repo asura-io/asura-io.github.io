@@ -6,6 +6,6 @@ export async function getStaticPaths() { return (await getCollection('series')).
 const { entry } = Astro.props; const { Content } = await render(entry);
 const works = (await getCollection('work')).filter((work) => work.data.series.toLowerCase() === entry.data.title.toLowerCase()).sort((a,b) => a.data.order-b.data.order);
 ---
-<SiteLayout title={`${entry.data.title} — gautama`}><article class="series-detail"><div class="series-detail-head"><h1>{entry.data.title}</h1><a href="/series/">series</a></div><section class="series-art-grid" aria-label={`${entry.data.title} artwork`}>
+<SiteLayout title={`${entry.data.title} — gautama`}><article class="series-detail"><div class="series-detail-head"><h1>{entry.data.title}</h1></div><section class="series-art-grid" aria-label={`${entry.data.title} artwork`}>
   {works.map((work) => [work.data.image, ...(work.data.images ?? [])].map((image, i) => <figure class:list={["series-art", i === 0 && "series-art-primary"]}><Image src={image} alt={`${work.data.title} ${i + 1}`} widths={[800,1200,1800]} sizes="(max-width: 640px) 100vw, 50vw" loading="eager" /></figure>))}
 </section><div class="series-statement"><Content /></div></article></SiteLayout>
