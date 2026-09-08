@@ -69,6 +69,9 @@ main { padding: 0 var(--pad) 5rem; }
 .about-page .about-copy { grid-column: 2; padding-top: 0; }
 .about-copy { width: 100%; max-width: 38rem; min-width: 0; font-size: 1.15rem; line-height: 1.4; letter-spacing: -.012em; overflow-wrap: anywhere; white-space: normal; }
 .about-copy p { margin: 0 0 1.5rem; }
+.about-contact { display: flex; flex-wrap: wrap; gap: .35rem 1.25rem; }
+.about-contact a { text-decoration: underline; text-underline-offset: .2em; }
+.about-contact a:focus-visible { outline: 2px solid currentColor; outline-offset: .2em; }
 .about-copy .exhibition-list p { margin: 0 0 .75rem; }
 .about-copy .exhibition-list p:last-child { margin-bottom: 0; }
 .about-copy p:first-child { font-size: 1.35rem; line-height: 1.3; }
