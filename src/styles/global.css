@@ -63,6 +63,9 @@ main { padding: 0 var(--pad) 5rem; }
 .series-art img { display: block; width: 100%; height: auto; }
 .series-statement { max-width: 42rem; padding: clamp(4rem, 12vw, 12rem) 0 5rem; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.35; }
 .series-statement p { margin: 0 0 1.5rem; }
+.about-page { max-width: 72rem; margin: 0 auto; }
+.about-portrait { display: block; width: 100%; height: auto; }
+.about-page .about-copy { padding-top: clamp(4rem, 10vw, 9rem); }
 .about-copy { max-width: 38rem; padding-top: 10vh; font-size: clamp(1.1rem, 2.2vw, 1.5rem); letter-spacing: -.025em; }
 .about-copy p { margin: 0 0 1.5rem; }
 .site-footer { display: flex; justify-content: flex-start; color: var(--muted); padding: 2rem var(--pad); font-size: .75rem; }
