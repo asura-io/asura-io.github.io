@@ -51,6 +51,18 @@ main { padding: 0 var(--pad) 5rem; }
 .detail-info p { margin: 0; }
 .detail-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem; }
 .detail-gallery img { display: block; width: 100%; height: auto; }
+.series-detail { max-width: 100rem; margin: 0 auto; }
+.series-detail-head { display: flex; justify-content: space-between; align-items: baseline; padding: .5rem 0 1.25rem; }
+.series-detail-head h1 { font-size: 1rem; font-weight: 400; margin: 0; }
+.series-detail-head a { font-size: .8rem; }
+.series-art-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(.5rem, 1.25vw, 1.25rem); align-items: start; }
+.series-art { grid-column: span 5; margin: 0; }
+.series-art:nth-child(3n + 1) { grid-column: span 7; }
+.series-art:nth-child(3n + 2) { margin-top: clamp(2rem, 8vw, 8rem); }
+.series-art-primary { grid-column: 1 / -1 !important; max-width: 72rem; justify-self: center; }
+.series-art img { display: block; width: 100%; height: auto; }
+.series-statement { max-width: 42rem; padding: clamp(4rem, 12vw, 12rem) 0 5rem; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.35; }
+.series-statement p { margin: 0 0 1.5rem; }
 .about-copy { max-width: 38rem; padding-top: 10vh; font-size: clamp(1.1rem, 2.2vw, 1.5rem); letter-spacing: -.025em; }
 .about-copy p { margin: 0 0 1.5rem; }
 .site-footer { display: flex; justify-content: flex-start; color: var(--muted); padding: 2rem var(--pad); font-size: .75rem; }
@@ -62,6 +74,11 @@ main { padding: 0 var(--pad) 5rem; }
   .work-card:nth-child(odd) { margin-top: 0; }
   .detail-info { grid-template-columns: 1fr; gap: .4rem; }
   .detail-gallery { grid-template-columns: 1fr; }
+  .series-art-grid { display: block; }
+  .series-art { margin: 0 0 1rem; }
+  .series-art:nth-child(3n + 2) { margin-top: 0; }
+  .series-art-primary { margin-bottom: 1rem; }
+  .series-statement { padding-top: 4rem; }
   .series-row { grid-template-columns: 2.5rem 1fr; }
   .series-row .active { grid-column: 2; }
   .home-series { margin-top: 12vh; }
