@@ -64,7 +64,7 @@ main { padding: 0 var(--pad) 5rem; }
 .series-art img { display: block; width: 100%; height: auto; }
 .series-statement { max-width: 42rem; padding: clamp(4rem, 12vw, 12rem) 0 5rem; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.35; }
 .series-statement p { margin: 0 0 1.5rem; }
-.about-page { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 7vw, 8rem); width: 100%; max-width: 72rem; min-width: 0; margin: 0 auto; align-items: start; }
+.about-page { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(22rem, .85fr); gap: clamp(3rem, 7vw, 9rem); width: 100%; max-width: none; min-width: 0; margin: 0 auto; align-items: start; }
 .about-portrait { display: block; width: 100%; max-width: 100%; min-width: 0; height: auto; }
 .about-page .about-portrait { grid-column: 1; position: sticky; top: var(--pad); }
 .about-page .about-copy { grid-column: 2; padding-top: 0; }
