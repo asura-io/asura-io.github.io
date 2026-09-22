@@ -2,13 +2,20 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import SiteLayout from '../layouts/SiteLayout.astro';
-const series = (await getCollection('series')).sort((a, b) => a.data.order - b.data.order);
+import { presentation, seriesOrder } from '../data/presentation';
+const series = (await getCollection('series')).sort((a, b) => seriesOrder.indexOf(a.id) - seriesOrder.indexOf(b.id));
 ---
 <SiteLayout>
-  <section class="series-grid" aria-label="series">
-    {series.map((item) => <a class="series-card" href={`/series/${item.id}/`}>
-      {item.data.cover && <Image class="series-image" src={item.data.cover} alt={item.data.title} widths={[600, 1000, 1400]} sizes="(max-width: 640px) 100vw, 33vw" />}
-      <div class="series-caption"><span>{item.data.title}</span></div>
+  <section class="series-index" id="work" aria-label="series">
+    {series.map((item, index) => <a class:list={['series-card', `series-card--${item.id}`]} href={`/series/${item.id}/`}>
+      <div class="series-caption">
+        <span class="series-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+        <h2>{item.data.title}</h2>
+        <span class="series-arrow" aria-hidden="true">↗</span>
+      </div>
+      <div class:list={['series-images', presentation[item.id].cover.length > 1 && 'series-images--pair']}>
+        {presentation[item.id].cover.map((image) => <Image class="series-image" src={image} alt={item.data.title} widths={[480, 800, 1200, 1800]} sizes={presentation[item.id].cover.length > 1 ? '(max-width: 700px) 44vw, (max-width: 1680px) 21vw, 364px' : '(max-width: 700px) 92vw, (max-width: 1680px) 45vw, 746px'} loading={index < 2 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} />)}
+      </div>
     </a>)}
   </section>
 </SiteLayout>

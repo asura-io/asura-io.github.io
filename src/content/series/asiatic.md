@@ -2,7 +2,7 @@
 title: asiatic
 order: 2
 active: false
-cover: ../../assets/images/photo_in_progress.jpg
+cover: ../../assets/images/asiatic/photo_in_progress.jpg
 ---
 
 I have always been fascinated by the concept of worship and the motivations behind human devotion. This image is a composite deity formed from the skeletal structures of various extinct megafauna.

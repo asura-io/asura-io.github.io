@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import { presentation, seriesOrder } from '../data/presentation';
+const series = (await getCollection('series')).sort((a, b) => seriesOrder.indexOf(a.id) - seriesOrder.indexOf(b.id));
+---
+<series-navigation class="series-nav">
+  <button class="series-nav-toggle" type="button" aria-expanded="false" aria-controls="series-nav-links" aria-label="Browse series">
+    <span>series</span><span class="series-nav-indicator" aria-hidden="true">+</span>
+  </button>
+  <nav id="series-nav-links" class="series-nav-links" aria-label="Art series">
+    {series.map((item, index) => <a class="series-nav-link" href={`/series/${item.id}/`} aria-label={item.data.title} aria-current={Astro.url.pathname.replace(/\/$/, '') === `/series/${item.id}` ? 'page' : undefined}>
+      <span class="series-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+      <Image class="series-nav-label series-nav-thumbnail" src={presentation[item.id].cover[0]} alt="" widths={[64, 128]} sizes="44px" />
+      <span class="series-nav-label series-nav-title">{item.data.title}</span>
+      <span class="series-nav-label series-nav-arrow" aria-hidden="true">↗</span>
+    </a>)}
+  </nav>
+</series-navigation>
+
+<script>
+  class SeriesNavigation extends HTMLElement {
+    connectedCallback() {
+      const button = this.querySelector<HTMLButtonElement>('button')!;
+      const setOpen = (open: boolean) => {
+        this.classList.toggle('is-expanded', open);
+        button.setAttribute('aria-expanded', String(open));
+      };
+      this.addEventListener('pointerenter', (event) => {
+        if (event.pointerType === 'mouse') setOpen(true);
+      });
+      this.addEventListener('pointerleave', (event) => {
+        if (event.pointerType === 'mouse' && !this.querySelector(':focus-visible')) {
+          setOpen(false);
+        }
+      });
+      this.addEventListener('focusin', (event) => {
+        if (event.target !== button) setOpen(true);
+      });
+      this.addEventListener('focusout', (event) => {
+        if (!this.contains(event.relatedTarget as Node)) setOpen(false);
+      });
+      button.addEventListener('click', () => setOpen(!this.classList.contains('is-expanded')));
+      document.addEventListener('pointerdown', (event) => {
+        if (!this.contains(event.target as Node)) setOpen(false);
+      });
+      this.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          button.focus();
+          setOpen(false);
+        }
+      });
+    }
+  }
+  customElements.define('series-navigation', SeriesNavigation);
+</script>

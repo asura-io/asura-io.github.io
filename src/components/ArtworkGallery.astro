@@ -1,0 +1,48 @@
+---
+import { Image, getImage } from 'astro:assets';
+import type { ArtworkView } from '../data/presentation';
+interface Props { title: string; groups: ArtworkView[][]; }
+const { title, groups } = Astro.props;
+const prepared = await Promise.all(groups.map(async (group) => Promise.all(group.map(async (view) => ({ ...view, full: await getImage({ src: view.image, width: Math.min(view.image.width, 2400), format: 'webp' }) })))));
+---
+<artwork-gallery>
+  <div class="artwork-sequence">
+    {prepared.map((group, groupIndex) => <div class:list={['artwork-group', group.length > 1 && 'artwork-group--pair', `artwork-group--${group[0].kind}`]}>
+      {group.map(({ image, kind, full }, index) => <figure class="artwork">
+        <a class="artwork-enlarge" href={full.src} data-caption={`${title}${kind === 'work' ? '' : ` — ${kind}`}`} aria-label={`Enlarge ${title}${kind === 'work' ? '' : ` ${kind}`}, ${groupIndex + 1}.${index + 1}`}>
+          <Image src={image} alt={`${title}${kind === 'work' ? '' : ` — ${kind}`}`} widths={[480, 800, 1200, 1800]} sizes={group.length > 1 ? '(max-width: 700px) 92vw, 40vw' : '(max-width: 700px) 92vw, 75vw'} loading={groupIndex === 0 ? 'eager' : 'lazy'} />
+          <span class="enlarge-mark" aria-hidden="true">↗</span>
+        </a>
+        <figcaption><span>{title}</span>{kind !== 'work' && <span>{kind}</span>}</figcaption>
+      </figure>)}
+    </div>)}
+  </div>
+  <dialog class="artwork-dialog" aria-label={`${title} enlarged artwork`}>
+    <form method="dialog"><button class="dialog-close" aria-label="Close enlarged artwork" autofocus>close <span aria-hidden="true">×</span></button></form>
+    <div class="dialog-image-wrap"><img class="dialog-image" alt="" /></div>
+    <p class="dialog-caption"></p>
+  </dialog>
+</artwork-gallery>
+<script>
+  class ArtworkGallery extends HTMLElement {
+    connectedCallback() {
+      const dialog = this.querySelector<HTMLDialogElement>('dialog')!;
+      const image = dialog.querySelector<HTMLImageElement>('img')!;
+      const caption = dialog.querySelector<HTMLElement>('.dialog-caption')!;
+      this.querySelectorAll<HTMLAnchorElement>('.artwork-enlarge').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          event.preventDefault();
+          image.src = link.href;
+          image.alt = link.dataset.caption ?? '';
+          caption.textContent = image.alt;
+          dialog.showModal();
+          document.documentElement.classList.add('artwork-open');
+        });
+      });
+      dialog.addEventListener('close', () => document.documentElement.classList.remove('artwork-open'));
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    }
+  }
+  if (!customElements.get('artwork-gallery')) customElements.define('artwork-gallery', ArtworkGallery);
+</script>

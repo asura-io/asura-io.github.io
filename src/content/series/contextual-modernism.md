@@ -1,8 +1,8 @@
 ---
 title: contextual modernism
-order: 1
+order: 3
 active: false
-cover: ../../assets/images/D279C9FC-0491-45CF-948A-7E3B989A8FA9_1_102_a.jpeg
+cover: ../../assets/images/contextual-modernism/P1011099-gallery-lighting-v3.png
 ---
 
 Contextual Modernism explores the decontextualization, and re-contextualization of traditional western religious imagery in a South Asian context.

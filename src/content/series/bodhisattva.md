@@ -1,8 +1,8 @@
 ---
 title: bodhisattva
-order: 3
+order: 1
 active: true
-cover: ../../assets/images/bodhisattva_I_ful.jpg
+cover: ../../assets/images/bodhisattva/G-3-5.jpeg
 ---
 
 Drawing from South Asian iconography, Bodhisattva presents an inquiry into the future of human worship. The series is created through a new artistic process where images are laboriously drawn by hand, then scanned, printed, and digitally modified. This process is repeated many times.

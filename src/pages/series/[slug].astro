@@ -1,11 +1,31 @@
 ---
 import { getCollection, render } from 'astro:content';
-import { Image } from 'astro:assets';
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import ArtworkGallery from '../../components/ArtworkGallery.astro';
+import SeriesNav from '../../components/SeriesNav.astro';
+import { presentation, seriesOrder } from '../../data/presentation';
 export async function getStaticPaths() { return (await getCollection('series')).map((entry) => ({ params: { slug: entry.id }, props: { entry } })); }
-const { entry } = Astro.props; const { Content } = await render(entry);
-const works = (await getCollection('work')).filter((work) => work.data.series.toLowerCase() === entry.data.title.toLowerCase()).sort((a,b) => a.data.order-b.data.order);
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const index = seriesOrder.indexOf(entry.id);
+const nextId = seriesOrder[(index + 1) % seriesOrder.length];
+const next = (await getCollection('series')).find((item) => item.id === nextId)!;
+const introduction = entry.body?.trim().split(/\n\s*\n/)[0];
 ---
-<SiteLayout title={`${entry.data.title} — gautama`}><article class="series-detail"><div class="series-detail-head"><h1>{entry.data.title}</h1></div><section class="series-art-grid" aria-label={`${entry.data.title} artwork`}>
-  {works.map((work) => [work.data.image, ...(work.data.images ?? [])].map((image, i) => <figure class:list={["series-art", i === 0 && "series-art-primary"]}><Image src={image} alt={`${work.data.title} ${i + 1}`} widths={[800,1200,1800]} sizes="(max-width: 640px) 100vw, 50vw" loading="eager" /></figure>))}
-</section><div class="series-statement"><Content /></div></article></SiteLayout>
+<SiteLayout title={`${entry.data.title} — gautama`}>
+  <div class="series-layout">
+  <SeriesNav />
+  <article class:list={['series-detail', `series-detail--${entry.id}`]}>
+    <header class="series-detail-head">
+      <div class="series-heading"><span class="series-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h1>{entry.data.title}</h1></div>
+      <p class="series-introduction">{introduction}</p>
+    </header>
+    <ArtworkGallery title={entry.data.title} groups={presentation[entry.id].groups} />
+    <div class="series-statement"><Content /></div>
+    <a class="next-series" href={`/series/${nextId}/`} aria-label={`Next series: ${next.data.title}`}>
+      <span class="series-number" aria-hidden="true">{String(seriesOrder.indexOf(nextId) + 1).padStart(2, '0')}</span>
+      <span>{next.data.title}</span><span aria-hidden="true">↗</span>
+    </a>
+  </article>
+  </div>
+</SiteLayout>

@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import portrait from '../assets/images/gautama-portrait.jpg';
+import portrait from '../assets/images/about/gautama-portrait.jpg';
 import SiteLayout from '../layouts/SiteLayout.astro';
 ---
 <SiteLayout title="about — gautama"><article class="about-page">
-  <Image class="about-portrait" src={portrait} alt="gautama in front of two paintings" widths={[800, 1200, 1600, 2200]} sizes="(max-width: 700px) 100vw, 72rem" loading="eager" />
+  <Image class="about-portrait" src={portrait} alt="gautama in front of two paintings" widths={[800, 1200, 1600, 2200]} sizes="(max-width: 900px) 92vw, 48vw" loading="eager" />
   <div class="about-copy">
   <p>gautama is an artist based out of Seattle.</p>
   <p>Coming from a rich background of immigration and cultural exchange, his drawings explore the change of culture and religion over time.</p>
@@ -12,20 +12,28 @@ import SiteLayout from '../layouts/SiteLayout.astro';
   <p>How does the culture of our present connect us to the past? And how may it connect us to the future? Why do humans worship, and how do they decide upon the beings they venerate?</p>
   <p>gautama has a Bachelor’s degree in mathematics, and has a strong interest in neurotechnology.</p>
   <p>gautama’s work has been exhibited widely, from Seattle to Mexico City to Los Angeles.</p>
+  </div>
+  <div class="about-cv">
+  <section class="cv-section">
   <h2>Solo Exhibitions</h2>
   <div class="exhibition-list">
-    <p>2023-2024 <em>Bodhisattva</em>, Art Gallery Studios, Virtual Exhibition</p>
+    <p class="cv-row"><span class="cv-year">2023-2024</span><span><em>Bodhisattva</em>, Art Gallery Studios, Virtual Exhibition</span></p>
   </div>
+  </section>
+  <section class="cv-section">
   <h2>Selected Group Exhibitions</h2>
   <div class="exhibition-list">
-    <p>2024 <em>Pink Tide</em>, Ventura, CA</p>
-    <p>2024 <em>Clavo Moviemento Feria de Arte</em>, Mexico City, Mexico</p>
-    <p>2023 <em>Timescape(s)</em>, Moscow Contemporary, Moscow, ID</p>
-    <p>2023 <em>Works</em>, Axis Gallery, Seattle, WA</p>
-    <p>2023 <em>Reverence In Uncertainty</em>, Columbia City Gallery, Seattle, WA</p>
-    <p>2022 <em>Movement/Journey</em>, Columbia City Gallery, Seattle, WA</p>
+    <p class="cv-row"><span class="cv-year">2024</span><span><em>Pink Tide</em>, Ventura, CA</span></p>
+    <p class="cv-row"><span class="cv-year">2024</span><span><em>Clavo Moviemento Feria de Arte</em>, Mexico City, Mexico</span></p>
+    <p class="cv-row"><span class="cv-year">2023</span><span><em>Timescape(s)</em>, Moscow Contemporary, Moscow, ID</span></p>
+    <p class="cv-row"><span class="cv-year">2023</span><span><em>Works</em>, Axis Gallery, Seattle, WA</span></p>
+    <p class="cv-row"><span class="cv-year">2023</span><span><em>Reverence In Uncertainty</em>, Columbia City Gallery, Seattle, WA</span></p>
+    <p class="cv-row"><span class="cv-year">2022</span><span><em>Movement/Journey</em>, Columbia City Gallery, Seattle, WA</span></p>
   </div>
+  </section>
+  <section class="cv-section">
   <h2>Education</h2>
-  <p>2023 Gage Academy of Art, KoH Atelier<br />2015 Bachelor of Science, Computer Science &amp; Mathematics, University of Illinois</p>
+  <p class="cv-row"><span class="cv-year">2023</span><span>Gage Academy of Art, KoH Atelier</span></p><p class="cv-row"><span class="cv-year">2015</span><span>Bachelor of Science, Computer Science &amp; Mathematics, University of Illinois</span></p>
+  </section>
   </div>
 </article></SiteLayout>
