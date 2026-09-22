@@ -24,7 +24,7 @@ const introduction = entry.body?.trim().split(/\n\s*\n/)[0];
     <div class="series-statement"><Content /></div>
     <a class="next-series" href={`/series/${nextId}/`} aria-label={`Next series: ${next.data.title}`}>
       <span class="series-number" aria-hidden="true">{String(seriesOrder.indexOf(nextId) + 1).padStart(2, '0')}</span>
-      <span>{next.data.title}</span><span aria-hidden="true">↗</span>
+      <span>{next.data.title}</span><span aria-hidden="true">↗︎</span>
     </a>
   </article>
   </div>

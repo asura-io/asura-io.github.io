@@ -11,7 +11,7 @@ const prepared = await Promise.all(groups.map(async (group) => Promise.all(group
       {group.map(({ image, kind, full }, index) => <figure class="artwork">
         <a class="artwork-enlarge" href={full.src} data-caption={`${title}${kind === 'work' ? '' : ` — ${kind}`}`} aria-label={`Enlarge ${title}${kind === 'work' ? '' : ` ${kind}`}, ${groupIndex + 1}.${index + 1}`}>
           <Image src={image} alt={`${title}${kind === 'work' ? '' : ` — ${kind}`}`} widths={[480, 800, 1200, 1800]} sizes={group.length > 1 ? '(max-width: 700px) 92vw, 40vw' : '(max-width: 700px) 92vw, 75vw'} loading={groupIndex === 0 ? 'eager' : 'lazy'} />
-          <span class="enlarge-mark" aria-hidden="true">↗</span>
+          <span class="enlarge-mark" aria-hidden="true">↗︎</span>
         </a>
         <figcaption><span>{title}</span>{kind !== 'work' && <span>{kind}</span>}</figcaption>
       </figure>)}

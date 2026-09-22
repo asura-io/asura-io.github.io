@@ -11,7 +11,7 @@ const series = (await getCollection('series')).sort((a, b) => seriesOrder.indexO
       <div class="series-caption">
         <span class="series-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
         <h2>{item.data.title}</h2>
-        <span class="series-arrow" aria-hidden="true">↗</span>
+        <span class="series-arrow" aria-hidden="true">↗︎</span>
       </div>
       <div class:list={['series-images', presentation[item.id].cover.length > 1 && 'series-images--pair']}>
         {presentation[item.id].cover.map((image) => <Image class="series-image" src={image} alt={item.data.title} widths={[480, 800, 1200, 1800]} sizes={presentation[item.id].cover.length > 1 ? '(max-width: 700px) 44vw, (max-width: 1680px) 21vw, 364px' : '(max-width: 700px) 92vw, (max-width: 1680px) 45vw, 746px'} loading={index < 2 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} />)}
