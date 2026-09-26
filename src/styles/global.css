@@ -84,6 +84,7 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-t
 .artwork-group--installation:first-child { width: 86%; margin-top: 0; }
 .series-detail--american-vedas .artwork-group--work:not(.artwork-group--pair) { width: 52%; }
 .series-detail--asiatic .artwork-group { width: 100%; margin-top: 0; }
+.series-detail--contextual-modernism .artwork-group { width: 56.25%; }
 .series-statement { width: 62%; max-width: 42rem; margin: var(--space) 0 var(--space) auto; font-size: 18px; line-height: 1.7; }
 .series-statement p { margin-bottom: 1.5rem; }
 /* The first paragraph appears verbatim in the introduction above the artwork. */
@@ -150,6 +151,7 @@ figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-t
   .artwork-group--pair { grid-template-columns: 1fr; gap: 2.5rem; }
   .artwork-group--detail { width: 85%; }
   .series-detail--american-vedas .artwork-group--work:not(.artwork-group--pair) { width: 100%; }
+  .series-detail--contextual-modernism .artwork-group { width: 100%; }
   figcaption { font-size: 13px; }
   .series-statement { width: 100%; font-size: 17px; }
   .next-series { grid-template-columns: 1.75rem 1fr auto; gap: .5rem; font-size: 24px; }
