@@ -5,12 +5,10 @@ active: false
 cover: ../../assets/images/contextual-modernism/P1011099-gallery-lighting-v3.png
 ---
 
-Contextual Modernism explores the decontextualization, and re-contextualization of traditional western religious imagery in a South Asian context.
+Contextual Modernism takes a familiar figure of Western devotion — the veiled Virgin Mary — and lets it drift into a South Asian frame.
 
-An image of the Virgin Mary has been laboriously drawing using graphite and charcoal. This image has then been digitized, modified, printed out, and drawn upon again.
+The image is drawn by hand in graphite and charcoal, then digitized, altered, printed, and drawn over again. Each cycle leaves permanent distortions, echoes of the way culture warps as it passes through the digital.
 
-These cycles of drawing, digitization, and re-drawing result in permanent distortions on the image. These distortions are reminiscent of modern cultural transformations in the digital space.
+Through those distortions a third eye, an ajna chakra, opens on the Virgin's brow. The gesture inverts a long history: just as South Asian imagery has been absorbed into the Western lexicon, here Western iconography is claimed and remade.
 
-Through these distortions, a third eye, or ajna chakra, has been placed on the image of the veiled virgin. This distortion decontextualizes the existing western religious imagery, much in the way South Asian imagery has historically been appropriated into modern western cultural lexicon.
-
-In the internet age, the origins of cultural artifacts are often lost after repeated digital thrashing.
+In the internet age, an artifact's origins rarely survive the crossing intact.

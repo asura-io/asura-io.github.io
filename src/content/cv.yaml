@@ -1,0 +1,43 @@
+# The bio / cv page CV. Edit freely.
+# Each section has a heading and a list of entries.
+# An entry has a `year`, an optional `title` (shown in italics), and a `detail`.
+
+- id: solo-exhibitions
+  order: 1
+  heading: Solo Exhibitions
+  entries:
+    - year: "2023-2024"
+      title: Bodhisattva
+      detail: Art Gallery Studios, Virtual Exhibition
+
+- id: group-exhibitions
+  order: 2
+  heading: Selected Group Exhibitions
+  entries:
+    - year: "2024"
+      title: Pink Tide
+      detail: Ventura, CA
+    - year: "2024"
+      title: Clavo Moviemento Feria de Arte
+      detail: Mexico City, Mexico
+    - year: "2023"
+      title: Timescape(s)
+      detail: Moscow Contemporary, Moscow, ID
+    - year: "2023"
+      title: Works
+      detail: Axis Gallery, Seattle, WA
+    - year: "2023"
+      title: Reverence In Uncertainty
+      detail: Columbia City Gallery, Seattle, WA
+    - year: "2022"
+      title: Movement/Journey
+      detail: Columbia City Gallery, Seattle, WA
+
+- id: education
+  order: 3
+  heading: Education
+  entries:
+    - year: "2023"
+      detail: Gage Academy of Art, KoH Atelier
+    - year: "2015"
+      detail: Bachelor of Science, Computer Science & Mathematics, University of Illinois

@@ -5,16 +5,8 @@ active: false
 cover: ../../assets/images/asiatic/photo_in_progress.jpg
 ---
 
-I have always been fascinated by the concept of worship and the motivations behind human devotion. This image is a composite deity formed from the skeletal structures of various extinct megafauna.
+asiatic is a composite deity assembled from the skeletons of extinct megafauna — its face the skull of Smilodon fatalis, the saber-toothed cat that once hunted alongside, and upon, early humans.
 
-The focal point of this deity is the head of Smilodon fatalis, the saber-toothed cat that once coexisted with, and often preyed upon humans. Drawing inspiration from the historical worship of megafauna the natural world, I explore the profound impact that these beings have had on our collective consciousness.
+The image is built through the same iterative process that runs through this body of work: drawn by hand, scanned, altered, printed, and drawn again, until the digital and physical leave permanent marks on one another. Those marks remain in the finished drawing as artifacts of its making.
 
-Employing a multidimensional artistic approach, I have constructed a process involving drawing, scanning, digital modification, printing, and iterative drawing cycles. This process combines both digital and physical media, resulting in a final drawing that embodies the convergence of these realms.
-
-The interplay between the digital and physical dimensions has bestowed permanent artifacts upon the image, serving as tangible remnants of the artistic process.
-
-This work prompts contemplation about the future evolution of our relationship with the digital realm. As we venture into the creation of conscious beings within the digital space, I ponder their inevitable role as objects of worship and veneration.
-
-Echoing the dynamic between ancient megafauna and humans, these synthetic, sentient entities may ultimately prey upon us, as the ancient Smilodon once did.
-
-I aim to evoke introspection and curiosity about the complexities of worship, our connection to the natural world, and the potential ramifications of our technological advancements. By melding ancient history, speculative future, and a hybrid artistic approach, I invite viewers to reflect on our place in the ever-shifting tapestry of existence.
+It is a meditation on the beings we choose to worship. Early humans revered the great predators that shaped them; as we now build conscious things inside our machines, I wonder whether these new entities will become our objects of veneration — and whether, like the Smilodon, they may one day turn on their makers.

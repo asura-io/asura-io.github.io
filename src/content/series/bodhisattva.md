@@ -5,10 +5,10 @@ active: true
 cover: ../../assets/images/bodhisattva/G-3-5.jpeg
 ---
 
-Drawing from South Asian iconography, Bodhisattva presents an inquiry into the future of human worship. The series is created through a new artistic process where images are laboriously drawn by hand, then scanned, printed, and digitally modified. This process is repeated many times.
+Drawing from South Asian iconography, Bodhisattva imagines the future of human worship.
 
-The iterative cycles of drawing and digital modification blurs the boundaries between the physical and digital realms. Through these images, I explore humanity's connection with the natural world and our growing affinity for technology. As we evolve, we may shift our worship from the natural world to machines and synthetic realities.
+Each image begins by hand, in graphite and gold, then is scanned, printed, and drawn into again — a cycle repeated until the line between the physical and the digital dissolves. The distortions that accumulate are not errors but relics: evidence of an image carried back and forth between two worlds.
 
-My art prompts reflection on cultural evolution, tradition, and progress. It invites viewers to contemplate the intertwined paths of our past, present, and the potential futures we may embrace.
+As we grow more intimate with our machines, our devotion may migrate from the natural world toward synthetic ones. These works sit at that threshold, asking what we will choose to venerate next, and how much of our inheritance we will carry across.
 
-Each image is 30”x40”, Drawing, Mixed Media, and Gold Leaf.
+Mixed media and gold leaf on paper, 30” × 40”.

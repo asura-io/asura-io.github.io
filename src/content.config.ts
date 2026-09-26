@@ -1,21 +1,6 @@
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
-import { glob } from 'astro/loaders';
-
-const work = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/work' }),
-  schema: ({ image }) => z.object({
-    title: z.string(),
-    series: z.string(),
-    year: z.union([z.string(), z.number()]).optional(),
-    medium: z.string().optional(),
-    dimensions: z.string().optional(),
-    image: image(),
-    images: z.array(image()).optional(),
-    order: z.number().default(0),
-    featured: z.boolean().default(false)
-  })
-});
+import { glob, file } from 'astro/loaders';
 
 const series = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/series' }),
@@ -27,4 +12,22 @@ const series = defineCollection({
   })
 });
 
-export const collections = { work, series };
+const bio = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/bio' }),
+  schema: z.object({}).passthrough()
+});
+
+const cv = defineCollection({
+  loader: file('./src/content/cv.yaml'),
+  schema: z.object({
+    order: z.number().default(0),
+    heading: z.string(),
+    entries: z.array(z.object({
+      year: z.string(),
+      title: z.string().optional(),
+      detail: z.string()
+    }))
+  })
+});
+
+export const collections = { series, bio, cv };
