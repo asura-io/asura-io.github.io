@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://asura-io.github.io',
+  site: 'https://gautama.io',
   output: 'static',
   devToolbar: { enabled: false },
   integrations: [sitemap()],
