@@ -68,10 +68,12 @@ series_spans = [span for page in doc for block in page.get_text('dict')['blocks'
 assert series_spans, 'No series titles found'
 assert all(span['flags'] & 2 for span in series_spans), 'Series title is not italic'
 links = [link for page in doc for link in page.get_links()]
-assert len(links) == 8
+assert len(links) == 9
 assert sum(link['kind'] == fitz.LINK_GOTO for link in links) == 5
 assert [link['page'] for link in doc[1].get_links()] == [2, 3, 8, 10, 12]
-assert sum(link['kind'] == fitz.LINK_URI for link in links) == 3
+assert sum(link['kind'] == fitz.LINK_URI for link in links) == 4
+cover_links = [link for link in doc[0].get_links() if link['kind'] == fitz.LINK_URI]
+assert len(cover_links) == 1 and cover_links[0]['uri'].rstrip('/') == 'https://gautama.io'
 
 previews = HERE / 'previews'
 overview = Image.new('RGB', (928, ((len(doc) + 3) // 4) * 312 + 4), '#deded6')
@@ -88,7 +90,7 @@ overview.save(previews / 'overview.jpg', quality=93)
 report = {
     'pages': len(doc), 'page_size_inches': [9, 12],
     'all_fonts_embedded': True, 'series_titles_italic': True, 'source_text_verified': checked,
-    'contents_links': 5, 'contact_links': 3, 'bookmarks': len(doc.get_toc()),
+    'contents_links': 5, 'contact_links': 3, 'cover_website_links': 1, 'bookmarks': len(doc.get_toc()),
     'bytes': PDF.stat().st_size,
 }
 (HERE / 'pdf-check.json').write_text(json.dumps(report, indent=2) + '\n')

@@ -29,6 +29,8 @@ h3 { font-size: 30px; line-height: 1.12; font-weight: 400; letter-spacing: -.6px
 .cover-bottom h2 { font-size: 48px; line-height: 1.04; letter-spacing: -1.8px; }
 .cover-bottom .label { border-top: 1px solid var(--ink); padding-top: 11px; margin-bottom: 13px; }
 .cover-bottom p { font-size: 16px; line-height: 1.4; }
+.cover-site { display: flex; justify-content: space-between; align-items: center; width: 222px; margin: 18px 0 0 auto; padding: 10px 14px; background: var(--mint); color: var(--ink); font-size: 23px; line-height: 1; letter-spacing: -.4px; text-decoration: none; }
+.cover-site:hover, .cover-site:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 .contents .display { margin-top: 9px; }
 .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin: 40px 0 44px; }
 .intro-grid .lead { font-size: 28px; }

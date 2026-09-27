@@ -52,6 +52,7 @@ add('Cover', 'cover', `
   ${img('cover', 'cover-image', 'Two Bodhisattva works installed side by side')}
   <div class="cover-bottom"><h2>Sacred images,<br>synthetic futures.</h2>
   <div>${label('Selected work / 01')}<p>Drawing, devotion<br>and the images we inherit.</p></div></div>
+  <a class="cover-site" href="https://gautama.io" aria-label="Visit gautama.io"><span>gautama.io</span><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
 `);
 
 add('Contents', 'contents', `

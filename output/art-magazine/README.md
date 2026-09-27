@@ -1,6 +1,6 @@
 # gautama — Selected Work
 
-A 13-page, 9 × 12 inch artist portfolio with a Colossal-inspired editorial direction: warm paper, large sans-serif headlines, serif text, mint accents, and generous artwork views. The cover features the Bodhisattva installation, page 4 pairs two gallery photographs, and all series titles are italicized. The portfolio includes Bodhisattva, Asiatic, and Contextual Modernism.
+A 13-page, 9 × 12 inch artist portfolio with a Colossal-inspired editorial direction: warm paper, large sans-serif headlines, serif text, mint accents, and generous artwork views. The cover features the Bodhisattva installation and a prominent clickable gautama.io link in a mint accent block, page 4 pairs two gallery photographs, and all series titles are italicized. The portfolio includes Bodhisattva, Asiatic, and Contextual Modernism.
 
 Page 8 uses an asymmetric composition with a larger color work on the left and a smaller graphite work above the text on the right. Large decorative chapter numerals are omitted. The contents introduction avoids a single-word final line, and the closing artist name shares the cover masthead typography.
 
