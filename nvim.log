@@ -1,0 +1,3 @@
+WRN 2026-09-22T21:00:34.574 ?.49725    server_start:197: Failed to start server: operation not permitted: /var/folders/g1/1sz8jp9n2xx6gqbwmzq5fy8m0000gn/T/nvim.gauthamacharya/z6v3I6/nvim.49725.0
+WRN 2026-09-22T21:00:47.519 ?.49728    server_start:197: Failed to start server: operation not permitted: /var/folders/g1/1sz8jp9n2xx6gqbwmzq5fy8m0000gn/T/nvim.gauthamacharya/vJu7tS/nvim.49728.0
+WRN 2026-09-22T21:01:05.880 ?.49768    server_start:197: Failed to start server: operation not permitted: /var/folders/g1/1sz8jp9n2xx6gqbwmzq5fy8m0000gn/T/nvim.gauthamacharya/EzAekI/nvim.49768.0
