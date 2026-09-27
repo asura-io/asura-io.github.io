@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import ArtworkGallery from '../../components/ArtworkGallery.astro';
 import SeriesNav from '../../components/SeriesNav.astro';
+import StudioProcess from '../../components/StudioProcess.astro';
 import { presentation, seriesOrder } from '../../data/presentation';
 export async function getStaticPaths() { return (await getCollection('series')).map((entry) => ({ params: { slug: entry.id }, props: { entry } })); }
 const { entry } = Astro.props;
@@ -21,7 +22,9 @@ const introduction = entry.body?.trim().split(/\n\s*\n/)[0];
       <p class="series-introduction">{introduction}</p>
     </header>
     <ArtworkGallery title={entry.data.title} groups={presentation[entry.id].groups} />
-    <div class="series-statement"><Content /></div>
+    {entry.id === 'bodhisattva'
+      ? <StudioProcess><Content /></StudioProcess>
+      : <div class="series-statement"><Content /></div>}
     <a class="next-series" href={`/series/${nextId}/`} aria-label={`Next series: ${next.data.title}`}>
       <span class="series-number" aria-hidden="true">{String(seriesOrder.indexOf(nextId) + 1).padStart(2, '0')}</span>
       <span>{next.data.title}</span><span aria-hidden="true">↗︎</span>

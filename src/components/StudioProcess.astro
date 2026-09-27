@@ -1,0 +1,95 @@
+---
+interface Props { showSeriesLink?: boolean; }
+const { showSeriesLink = false } = Astro.props;
+---
+<section class="studio-process" aria-labelledby="studio-heading">
+  <div class="studio-layout">
+    <figure class="studio-film">
+      <studio-player>
+        <video
+          controls
+          playsinline
+          preload="none"
+          width="720"
+          height="1280"
+          poster="/video/studio-process-poster.jpg"
+          aria-label="Bodhisattva studio process"
+          aria-describedby="studio-description"
+        >
+          <source src="/video/studio-process.mp4" type="video/mp4" />
+          <a href="/video/studio-process.mp4">Watch the studio process film</a>.
+        </video>
+        <button class="studio-play" type="button" aria-label="Watch the process, 22 seconds" hidden>
+          <span class="studio-play-icon"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m9 5 11 7-11 7Z" fill="currentColor" /></svg></span>
+        </button>
+      </studio-player>
+      <figcaption><span>Watch the process</span><span>0:22</span></figcaption>
+      <p id="studio-description" class="studio-description">The artist draws a figure by hand and photographs it. The image takes on digital color and distortion, then gold leaf is applied to its surface. The film closes on the transformed work.</p>
+    </figure>
+    <div class="studio-copy">
+      <h2 id="studio-heading">in the studio</h2>
+      <div class:list={['studio-text', Astro.slots.has('default') && 'studio-text--statement']}>
+        <slot><p>Drawn by hand, carried through the digital, and worked into again. Each passage leaves a trace.</p></slot>
+      </div>
+      {showSeriesLink && <a class="studio-series-link" href="/series/bodhisattva/">Explore bodhisattva <span aria-hidden="true">↗︎</span></a>}
+    </div>
+  </div>
+</section>
+
+<script>
+  class StudioPlayer extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.ready) return;
+      this.dataset.ready = 'true';
+      const video = this.querySelector('video')!;
+      const button = this.querySelector('button')!;
+      video.controls = false;
+      button.hidden = false;
+      button.addEventListener('click', async () => {
+        video.controls = true;
+        button.hidden = true;
+        video.focus();
+        try {
+          await video.play();
+        } catch {
+          // Keep the native player available if playback fails or is interrupted.
+          video.controls = true;
+        }
+      });
+    }
+  }
+  if (!customElements.get('studio-player')) customElements.define('studio-player', StudioPlayer);
+</script>
+
+<style>
+  .studio-process { margin-block: var(--space); padding-top: clamp(2.5rem, 5vw, 5rem); border-top: 1px solid var(--line); }
+  .studio-layout { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: clamp(3rem, 7vw, 7rem); align-items: center; max-width: 1040px; margin-inline: auto; }
+  .studio-film { min-width: 0; }
+  studio-player { position: relative; display: block; }
+  video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; background: #e5e3dc; }
+  video:focus-visible { outline: 1px solid var(--ink); outline-offset: 6px; }
+  .studio-play { position: absolute; inset: 0; display: grid; place-items: center; width: 100%; padding: 0; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+  .studio-play[hidden] { display: none; }
+  .studio-play-icon { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: var(--paper); transition: transform 180ms ease; }
+  .studio-play:hover .studio-play-icon { transform: scale(1.06); }
+  figcaption { font-size: 13px; }
+  figcaption span:last-child { font-variant-numeric: tabular-nums; }
+  .studio-copy h2 { margin-bottom: 1.5rem; font-size: 14px; line-height: 1.5; }
+  .studio-text { max-width: 30rem; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.4; letter-spacing: -.025em; }
+  .studio-text--statement { font-size: 18px; line-height: 1.7; letter-spacing: normal; }
+  .studio-text--statement :global(p) { margin-bottom: 1.5rem; }
+  /* The series introduction already contains the first paragraph. */
+  .studio-text--statement :global(p:first-child) { display: none; }
+  .studio-text--statement :global(p:last-child) { margin-bottom: 0; }
+  .studio-series-link { display: inline-flex; align-items: baseline; gap: 1.5rem; margin-top: 2rem; padding-block: .5rem; font-size: 14px; }
+  .studio-series-link:hover { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+  .studio-description { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  @media (max-width: 700px) {
+    .studio-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+    .studio-copy { grid-row: 1; }
+    .studio-copy h2 { margin-bottom: 1rem; }
+    .studio-film { width: min(100%, 360px); margin-inline: auto; }
+    .studio-text--statement { font-size: 17px; }
+    .studio-series-link { margin-top: 1rem; }
+  }
+</style>
