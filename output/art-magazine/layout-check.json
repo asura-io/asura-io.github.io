@@ -1,0 +1,70 @@
+{
+  "pages": [
+    {
+      "page": "page-1",
+      "name": "Cover",
+      "issues": []
+    },
+    {
+      "page": "page-2",
+      "name": "Contents",
+      "issues": []
+    },
+    {
+      "page": "page-3",
+      "name": "The artist",
+      "issues": []
+    },
+    {
+      "page": "page-4",
+      "name": "Bodhisattva",
+      "issues": []
+    },
+    {
+      "page": "page-5",
+      "name": "Bodhisattva — graphite and gold",
+      "issues": []
+    },
+    {
+      "page": "page-6",
+      "name": "Bodhisattva — color",
+      "issues": []
+    },
+    {
+      "page": "page-7",
+      "name": "The marks of making",
+      "issues": []
+    },
+    {
+      "page": "page-8",
+      "name": "At the threshold",
+      "issues": []
+    },
+    {
+      "page": "page-9",
+      "name": "Asiatic",
+      "issues": []
+    },
+    {
+      "page": "page-10",
+      "name": "Asiatic — installation studies",
+      "issues": []
+    },
+    {
+      "page": "page-11",
+      "name": "Contextual Modernism",
+      "issues": []
+    },
+    {
+      "page": "page-12",
+      "name": "Contextual Modernism — installation",
+      "issues": []
+    },
+    {
+      "page": "page-13",
+      "name": "Exhibitions, education & contact",
+      "issues": []
+    }
+  ],
+  "brokenImages": []
+}

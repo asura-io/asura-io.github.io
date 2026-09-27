@@ -1,0 +1,145 @@
+@page { size: 9in 12in; margin: 0; }
+:root { --paper: #f8f4e9; --ink: #202219; --muted: #65675c; --mint: #ace5d0; --rule: #b8b9ab; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: #dad8d0; color: var(--ink); font-family: 'Helvetica Neue', Arial, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 864px; height: 1152px; margin: 28px auto; position: relative; background: var(--paper); padding: 80px 52px 70px; overflow: hidden; break-after: page; }
+.page:last-child { break-after: auto; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, p, figure, blockquote { margin: 0; }
+h2 { font-size: 64px; line-height: 1.02; font-weight: 400; letter-spacing: -2.5px; }
+h3 { font-size: 30px; line-height: 1.12; font-weight: 400; letter-spacing: -.6px; }
+.label { font-size: 10px; line-height: 1.4; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+.eyebrow { margin-bottom: 24px; }
+.running { position: absolute; top: 30px; left: 52px; right: 52px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
+.folio { position: absolute; bottom: 26px; left: 52px; right: 52px; display: flex; justify-content: space-between; align-items: baseline; }
+.folio > span { font-size: 12px; font-variant-numeric: tabular-nums; }
+.serif, .body, blockquote { font-family: 'Iowan Old Style', Georgia, serif; }
+.body { font-size: 17px; line-height: 1.43; }
+.body p + p { margin-top: 16px; }
+.lead { font-size: 30px; line-height: 1.2; letter-spacing: -.3px; }
+.caption { font-size: 11px; line-height: 1.45; color: var(--muted); }
+.series-title { font-style: italic; }
+.display { font-size: 83px; line-height: .99; letter-spacing: -3px; }
+.cover { padding: 29px 40px 35px; }
+.cover-top { display: flex; justify-content: space-between; }
+.masthead { font-family: 'Arial Black', 'Helvetica Neue', sans-serif; font-size: 153px; line-height: 1.13; letter-spacing: -11px; font-weight: 900; margin-left: -7px; margin-top: 2px; }
+.cover-image { width: 784px; height: 691px; object-fit: cover; object-position: 50% 43%; margin-top: 11px; }
+.cover-bottom { display: grid; grid-template-columns: 1fr 222px; gap: 26px; padding-top: 24px; align-items: end; }
+.cover-bottom h2 { font-size: 48px; line-height: 1.04; letter-spacing: -1.8px; }
+.cover-bottom .label { border-top: 1px solid var(--ink); padding-top: 11px; margin-bottom: 13px; }
+.cover-bottom p { font-size: 16px; line-height: 1.4; }
+.contents .display { margin-top: 9px; }
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin: 40px 0 44px; }
+.intro-grid .lead { font-size: 28px; }
+.intro-grid .body { font-size: 16px; }
+.intro-grid .body p { text-wrap: pretty; }
+.contents-list { border-top: 1px solid var(--ink); }
+.contents-list a { display: grid; grid-template-columns: 50px 1fr 190px; align-items: baseline; padding: 17px 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: inherit; }
+.contents-list a > span { font-size: 13px; }
+.contents-list strong { font-weight: 400; font-size: 25px; letter-spacing: -.5px; }
+.contents-list em { font-size: 11px; font-style: normal; color: var(--muted); text-align: right; }
+.contents-note { display: flex; gap: 26px; margin-top: 35px; }
+.contents-note p { font-size: 11px; line-height: 1.5; color: var(--muted); }
+.bio-heading { display: flex; justify-content: space-between; align-items: end; margin: 15px 0 28px; }
+.bio-heading .label { padding-bottom: 7px; }
+.portrait { width: 760px; height: 485px; object-fit: cover; object-position: center 56%; }
+.bio > .caption { margin-top: 10px; }
+.bio-copy { display: grid; grid-template-columns: 230px 1fr; gap: 44px; margin-top: 33px; }
+.bio-copy h3 { font-family: 'Iowan Old Style', Georgia, serif; font-size: 29px; line-height: 1.18; }
+.bio-copy .body { font-size: 16.5px; }
+.section-heading .label { display: inline-block; background: var(--mint); padding: 5px 9px; margin-bottom: 24px; }
+.section-heading h2 { font-size: 77px; letter-spacing: -3.1px; }
+.standfirst { font-size: 29px; line-height: 1.25; max-width: 670px; margin: 26px 0 48px; }
+.bodhi-open .audience-pair img { height: 506px; }
+.below-image { display: flex; justify-content: space-between; gap: 35px; margin-top: 12px; }
+.below-image > :last-child { text-align: right; }
+.section-bottom { border-top: 1px solid var(--rule); margin-top: 53px; padding-top: 19px; display: flex; justify-content: space-between; align-items: baseline; }
+.section-bottom .serif { font-size: 20px; }
+.plate { padding-top: 84px; }
+.full-plate { width: 760px; height: 937px; object-fit: contain; }
+.plate-caption { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; align-items: baseline; }
+.plate-caption .label { font-size: 9px; }
+.color-plate { background: #efeee7; }
+.process .display { font-size: 72px; }
+.detail-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 34px; }
+.detail-pair img { width: 372px; height: 461px; object-fit: cover; }
+.detail-pair img:first-child { object-position: center; }
+.detail-pair img:last-child { object-position: 50% 50%; }
+.process-copy { display: grid; grid-template-columns: 210px 1fr; gap: 44px; margin-top: 21px; }
+.process-copy .body { font-size: 17px; }
+.process-line { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 17px 0; margin-top: 36px; }
+.process-line > span { font-size: 20px; color: var(--muted); }
+.threshold h2 { font-size: 64px; margin-bottom: 45px; }
+.threshold-layout { display: grid; grid-template-columns: 480px 248px; gap: 32px; align-items: start; }
+.threshold-layout img { width: 100%; height: auto; }
+.threshold-color { padding-top: 76px; }
+.threshold-color .caption { margin-top: 18px; }
+.threshold-aside .body { margin-top: 28px; font-size: 18px; line-height: 1.43; }
+.gallery-page { background: #202b26; color: var(--paper); }
+.gallery-page .running { border-color: #617068; }
+.gallery-top { display: flex; justify-content: space-between; align-items: start; margin-top: 12px; margin-bottom: 31px; }
+.gallery-top h2 { font-size: 59px; width: 370px; }
+.audience-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: end; }
+.audience-pair img { width: 370px; height: 570px; object-fit: contain; }
+.gallery-page blockquote { font-size: 30px; line-height: 1.25; max-width: 670px; margin-top: 39px; }
+.quote-credit { margin-top: 21px; color: var(--mint); }
+.asiatic .section-heading h2 { margin-bottom: 25px; }
+.asiatic .section-heading .label { margin-bottom: 16px; }
+.asiatic-image { width: 760px; height: 453px; object-fit: cover; object-position: 50% 40%; }
+.asiatic > .caption { margin-top: 9px; }
+.asia-copy { display: grid; grid-template-columns: 215px 1fr; gap: 39px; margin-top: 25px; }
+.asia-copy h3 { font-size: 31px; }
+.asia-copy .body { font-size: 15.5px; line-height: 1.38; }
+.asia-copy .body p + p { margin-top: 12px; }
+.asiatic-details .eyebrow { margin-bottom: 16px; }
+.asiatic-details h2 { font-size: 59px; margin-bottom: 18px; }
+.asiatic-details figure img { width: 100%; height: auto; }
+.asiatic-details figcaption { margin-top: 8px; }
+.asiatic-head-detail { width: 660px; }
+.asiatic-torso-detail { width: 568px; margin: 16px 0 0 auto; }
+.context-opener .display { font-size: 84px; margin: 38px 0 50px; }
+.context-intro { max-width: 662px; }
+.context-intro .lead { font-size: 32px; line-height: 1.27; }
+.context-body { display: grid; grid-template-columns: 210px 1fr; gap: 44px; margin-top: 50px; }
+.context-body > .label { padding-top: 6px; }
+.context-body .body { font-size: 18px; line-height: 1.43; }
+.context-opener blockquote { font-size: 35px; line-height: 1.18; border-top: 1px solid #9eb6a7; padding-top: 25px; margin-top: 45px; }
+.next-caption { display: flex; justify-content: space-between; margin-top: 37px; }
+.context-plate { background: #efeee7; }
+.context-image { width: 760px; height: 960px; object-fit: contain; }
+.vedas-opener .section-heading { margin-top: 12px; }
+.vedas-opener .section-heading h2 { font-size: 88px; }
+.vedas-install { width: 760px; height: auto; margin-top: 43px; }
+.vedas-opener > .caption { margin-top: 12px; }
+.vedas-intro { display: grid; grid-template-columns: 210px 1fr; gap: 44px; border-top: 1px solid var(--rule); padding-top: 24px; margin-top: 48px; }
+.vedas-intro .lead { font-size: 31px; }
+.shiva-page { background: #fff; }
+.shiva-layout { display: grid; grid-template-columns: 214px 1fr; gap: 25px; height: 930px; align-items: center; }
+.shiva-aside h2 { font-size: 45px; letter-spacing: -1.5px; margin: 24px 0 37px; }
+.shiva-aside .body { font-size: 19px; line-height: 1.45; }
+.shiva-image { width: 521px; height: 860px; object-fit: contain; }
+.shiva-page > .caption { margin-top: 17px; }
+.vedas-pair { background: #fff; }
+.vedas-pair h2 { font-size: 58px; margin-top: 18px; }
+.vedas-two { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; margin-top: 74px; }
+.vedas-two img { width: 363px; height: 620px; object-fit: contain; }
+.vedas-two figcaption { font-size: 13px; border-top: 1px solid var(--rule); padding-top: 15px; margin-top: 22px; }
+.vedas-note { display: flex; justify-content: space-between; margin-top: 72px; }
+.cv-heading { display: flex; justify-content: space-between; align-items: end; margin: 12px 0 36px; }
+.cv-heading h2 { font-size: 69px; }
+.cv-heading .label { padding-bottom: 7px; }
+.cv-section { display: grid; grid-template-columns: 192px 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 16px; margin-top: 20px; }
+.cv-section > .label { max-width: 180px; }
+.cv-entry { display: grid; grid-template-columns: 82px 1fr; gap: 12px; font-size: 13px; line-height: 1.4; }
+.cv-entry + .cv-entry { margin-top: 12px; }
+.cv-entry em { font-weight: 500; font-style: normal; }
+.cv-year { font-size: 11px; padding-top: 2px; color: var(--muted); }
+.contact { display: flex; justify-content: space-between; align-items: end; border-top: 1px solid var(--ink); margin-top: 37px; padding-top: 25px; }
+.contact h3 { font-size: 58px; letter-spacing: -4.17px; margin: 0 0 9px -2.65px; }
+.contact a { display: block; font-size: 16px; line-height: 1.65; color: inherit; text-decoration: none; }
+.colophon { margin-top: 25px; font-size: 10px; line-height: 1.5; color: var(--muted); }
+@media print {
+  html, body { background: var(--paper); }
+  .page { margin: 0; }
+}
